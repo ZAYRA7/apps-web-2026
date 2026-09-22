@@ -1,0 +1,26 @@
+.box{
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #4c56af;
+  margin: 25px;
+  background-color: #4ba1de;
+}
+
+h1{
+    color: rgb(73, 73, 141);
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.noticias{
+    color: rgb(208, 79, 79);
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#titulo1{
+    color: rgb(37, 41, 154);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
