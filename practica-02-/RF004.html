@@ -3,38 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancelación de cita</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Fuente Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos MenteSana (Guía de Estilo) -->
+    <style>
+        :root {
+            --ms-azul: #5B8DEF;
+            --ms-morado: #9B7FEA;
+            --ms-azul-claro: #DCEEFF;
+            --ms-lavanda: #EEE9FF;
+            --ms-texto: #30364D;
+            
+            /* Sistema de espaciado basado en 8dp */
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--ms-texto);
+            background-color: #f4f7f6;
+            font-size: 14px; /* Guía: Cuerpo 14sp */
+        }
+
+        /* --- Tipografía --- */
+        h1 { font-size: 28px; font-weight: 400; } /* Título grande H1 */
+        h2 { font-size: 22px; font-weight: 500; } /* Título mediano H2 */
+        .subtitulo { font-size: 16px; font-weight: 500; } /* Subtítulo */
+        .cuerpo-pequeno { font-size: 12px; font-weight: 400; } /* Cuerpo pequeño */
+
+        /* --- Botones --- */
+        .btn-primary {
+            background-color: var(--ms-azul);
+            border-color: var(--ms-azul);
+            font-weight: 500;
+            font-size: 14px; /* Guía: Botón 14sp */
+            padding: 12px 24px; /* Área táctil mínima 48dp (12+12+24 aprox) */
+            border-radius: 8px; /* Guía: Radio 8-12dp */
+        }
+        .btn-primary:hover {
+            background-color: #4a7bd4;
+            border-color: #4a7bd4;
+        }
+
+        /* --- Tarjeta --- */
+        .card-custom {
+            border: none;
+            border-radius: 12px; /* Guía: Radio 8-12dp */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background-color: #FFFFFF;
+            padding: var(--space-4); /* 32px de padding interno */
+        }
+
+        /* --- Alertas --- */
+        .alert-custom {
+            background-color: var(--ms-azul-claro);
+            border: none;
+            color: var(--ms-texto);
+            border-radius: 8px;
+            padding: var(--space-2); /* 16px */
+        }
+
+        /* --- Ajuste de espaciado entre elementos (Múltiplos de 8) --- */
+        .mb-8 { margin-bottom: var(--space-1); }  /* 8px */
+        .mb-16 { margin-bottom: var(--space-2); } /* 16px */
+        .mb-24 { margin-bottom: var(--space-3); } /* 24px */
+        .mb-32 { margin-bottom: var(--space-4); } /* 32px */
+
+        /* --- Navegación con acento morado --- */
+        .nav-custom {
+            border-bottom: 2px solid var(--ms-morado); /* Acento morado */
+        }
+        .nav-custom .nav-link {
+            color: var(--ms-texto);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .nav-custom .nav-link:hover {
+            color: var(--ms-azul);
+        }
+
+        /* --- Campos de formulario --- */
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            border-color: var(--ms-azul);
+            box-shadow: 0 0 0 0.25rem rgba(91, 141, 239, 0.25);
+        }
+    </style>
+
+    <title>Cancelación de cita - MenteSana</title>
 </head>
 <body>
-               <img src="https://universidadesdemexico.mx/logos/original/logo-universidad-politecnica-de-pachuca.webp" alt="si" width="200" height="200">    <h1>MenteSana</h1>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Ayuda y Soporte</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
 
-    <h2>Cancelación de Cita</h2>
-    <p>Cancela una cita agendada con al menos 24 horas de anticipación.</p>
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center py-5">
+        
+        <div class="col-12 col-md-8 col-lg-6">
 
-    <form action="" method="post">
-        <label for="fechaCita">Fecha de la cita:</label><br>
-        <input type="date" id="fechaCita" name="fechaCita" required>
+            <div class="card card-custom">
+                
+                <!-- Encabezado -->
+                <div class="text-center mb-32">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNiDMzhiMizso7b-aOMx9KdjgKmrojBD0ydUnwiyp04xODe7p5TZ0Q_C8&s=10" alt="Logo UPP" class="img-fluid mb-16" style="max-height: 80px;">
+                    <h1 class="mb-8">MenteSana</h1>
+                    <p class="cuerpo-pequeno text-muted mb-0">Tu bienestar emocional, a un solo clic.</p>
+                </div>
 
-        <br><br>
+                <!-- Navegación con acento morado -->
+                <ul class="nav justify-content-center mb-32 nav-custom pb-2">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ayuda y Soporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
 
-        <label for="horaCita">Hora de la cita:</label><br>
-        <input type="time" id="horaCita" name="horaCita" required>
+                <!-- Título y descripción -->
+                <h2 class="text-center mb-16">Cancelación de Cita</h2>
+                <p class="text-center cuerpo-pequeno text-muted mb-24">
+                    Cancela una cita agendada con al menos 24 horas de anticipación.
+                </p>
 
-        <br><br>
+                <!-- Formulario -->
+                <form action="" method="post">
+                    
+                    <div class="mb-24">
+                        <label for="fechaCita" class="form-label fw-bold mb-8">Fecha de la cita:</label>
+                        <input type="date" class="form-control" id="fechaCita" name="fechaCita" required>
+                    </div>
 
-        <p>Nota: Si su cita es en menos de 24 horas, el sistema no permitirá la cancelación.</p>
+                    <div class="mb-24">
+                        <label for="horaCita" class="form-label fw-bold mb-8">Hora de la cita:</label>
+                        <input type="time" class="form-control" id="horaCita" name="horaCita" required>
+                    </div>
 
-        <button type="submit">Cancelar Cita</button>
-    </form>
+                    <div class="alert alert-custom mb-24" role="alert">
+                        <small><strong>Nota:</strong> Si su cita es en menos de 24 horas, el sistema no permitirá la cancelación.</small>
+                    </div>
 
-    <br>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Cancelar Cita</button>
+                    </div>
 
-    <p>&copy; 2026 Portal Estudiantil. Todos los derechos reservados.</p>
+                </form>
+            </div>
 
+            <p class="text-center cuerpo-pequeno text-muted mt-32 mb-0">
+                &copy; 2026 Portal Estudiantil. Todos los derechos reservados.
+            </p>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tVYxM" crossorigin="anonymous"></script>
 </body>
 </html>
